@@ -12,3 +12,8 @@ requests==2.23.0
 six==1.14.0
 sqlparse==0.3.0
 urllib3==1.25.8
+redis
+celery==4.3.0
+# https://github.com/celery/kombu/issues/1063
+kombu==4.6.3
+selectolax==0.2.3
