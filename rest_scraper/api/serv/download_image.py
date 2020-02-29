@@ -4,39 +4,37 @@ from django.core import files
 from api.models import Picture
 
 
-def download_image():
-    image_urls = [
-        'https://i.wpimg.pl/O/644x430/d.wpimg.pl/58127322-34588805/shutterstock_Michal%20Ludwiczak.jpg',
-    ]
+def serv_download_image(image_url,page_id):
+    """
+    Download image
+    @param image_url: Full image URL
+    @return: Temporary file for Django Image and file name
+    """
+    request = requests.get(url=image_url,stream=True)
+    if request.status_code != requests.codes.ok:
+        return False
 
-    for image_url in image_urls:
-        # Steam the image from the url
-        request = requests.get(image_url, stream=True)
+    # Get the filename from the url,
+    file_name = image_url.split('/')[-1]
+    # Create a temporary file
+    lf = tempfile.NamedTemporaryFile()
 
-        # Was the request OK?
-        if request.status_code != requests.codes.ok:
-            # Nope, error handling, skip file etc etc etc
-            continue
+    # Read the streamed image in sections
+    for block in request.iter_content(1024 * 8):
+        if not block:
+            break
+        lf.write(block)
+    image = Picture(page_id=page_id)
+    image.picture.save(file_name, files.File(lf))
 
-        # Get the filename from the url, used for saving later
-        file_name = image_url.split('/')[-1]
+    return lf, file_name
 
-        # Create a temporary file
-        lf = tempfile.NamedTemporaryFile()
 
-        # Read the streamed image in sections
-        for block in request.iter_content(1024 * 8):
+# def serv_save_image(lf, file_name,page_id):
+#     # Create the model you want to save the image to
+#     image = Picture(page_id=page_id)
+#
+#     # Save the temporary image to the model#
+#     # This saves the model so be sure that is it valid
 
-            # If no more file then stop
-            if not block:
-                break
 
-            # Write image block to temporary file
-            lf.write(block)
-
-        # Create the model you want to save the image to
-        image = Picture(page_id=1)
-
-        # Save the temporary image to the model#
-        # This saves the model so be sure that is it valid
-        image.picture.save(file_name, files.File(lf))

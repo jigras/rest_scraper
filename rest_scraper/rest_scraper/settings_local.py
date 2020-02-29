@@ -21,9 +21,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.environ.get("SECRET_KEY", default='123456789')
 
-DEBUG = int(os.environ.get("DEBUG", default=0))
+DEBUG = int(os.environ.get("DEBUG", default=1))
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS",default='localhost').split(" ")
+ALLOWED_HOSTS = ['localhost','127.0.0.1']
 
 # Application definition
 
@@ -81,7 +81,7 @@ DATABASES = {
         "NAME": 'django_dev',
         "USER": 'dev_django',
         "PASSWORD": 'dev_django',
-        "HOST": 'db',
+        "HOST": 'localhost',
         "PORT": '5432'
     }
 }
@@ -125,10 +125,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-BROKER_URL = "redis://redis:6379/0"
-CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
+BROKER_URL = "redis://localhost:6379/0"
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'UTC'
-MEDIA_ROOT = '/home/app/web/'

@@ -14,3 +14,6 @@ Rzeczy do wyknoania
  ###Pobieranie obrazów:
  - Rozbudowa o możliwość wykluczanai bardzo małych obrazów
  - Rozbudowa o możliwość pobierania obrazów z CSS background
+ - Weryfikacja contentu zdjęcia
+ - Hashowanie contentu zdjęć
+ 
