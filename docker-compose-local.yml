@@ -23,7 +23,7 @@ services:
     build: ./rest_scraper
     command: celery -A rest_scraper worker
     volumes:
-      - .:/code
+      - media_volume
     links:
       - db
       - redis
