@@ -47,7 +47,7 @@ Status:
 - scraped: false oznacza zadanie do wykonania
 
 Response:
-```
+```json
 {
     "url":"https://www.dorotasmakuje.com/2016/11/jak-uprazyc-slonecznik/",
     "scraped":true
@@ -61,7 +61,7 @@ Parametr __page_id__ (id adresu url) pobrać można wpisując adres URL w zasobi
 
 Response:
 
-```
+```json
 [
     {
         "picture":"http://127.0.0.1:1337/media/wyciskara_philips9_wnIB143.jpg",
@@ -97,7 +97,7 @@ Response:
 ### Pobieranie tekstu z pobranej strony
 __/api/v1/page_create/{page_id}/__ - pobieranie tekstu na podstawie parametry page_id
 Jeżeli strona posiada status scraped = True, mamy możliwość pobrania tekstu z danej strony 
-```
+```json
 {
     "url": "https://www.dorotasmakuje.com/2016/11/jak-uprazyc-slonecznik/",
     "scraped": true,
@@ -111,7 +111,6 @@ Jeżeli strona posiada status scraped = True, mamy możliwość pobrania tekstu 
 
 
 ## Requirements
-
 
 ```
 asgiref==3.2.3
