@@ -136,14 +136,14 @@ selectolax==0.2.3
 ```
 
 
-##TODO:
+## TODO:
 Rzeczy do wykonania
 
-###Pobieranie treści:
+### Pobieranie treści:
  - Rozbudowa pobierania treści włączając semantyke HTML - np. pobieranie zawartosci samych tagów article
  - Możliwość wykluczania większej ilości tagów html
   
-###Pobieranie obrazów:
+### Pobieranie obrazów:
  - Rozbudowa o możliwość wykluczanai bardzo małych obrazów
  - Rozbudowa o możliwość pobierania obrazów z CSS background
  - Weryfikacja contentu zdjęcia
