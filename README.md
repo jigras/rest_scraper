@@ -23,8 +23,15 @@ http://127.0.0.1:1337/api/v1/
 
 __/api/v1/page_create/__ - POST aby dodać zadanie
 
-Response:
+Request POST
+```json
+{
+    "url": https://www.dorotasmakuje.com/2016/11/jak-uprazyc-slonecznik/
+}
 ```
+
+Response:
+```json
 {
     "url": "https://www.dorotasmakuje.com/2016/11/jak-uprazyc-slonecznik/",
     "scraped": false
@@ -144,3 +151,9 @@ Rzeczy do wykonania
  - Weryfikacja contentu zdjęcia
  - Hashowanie contentu zdjęć
  
+ ### Testy
+ - wykonanie dodatkowych testów widoków
+ - wykonanie dodatkowych testów api
+ 
+ ## Co do zmiany
+ Do aktualizacji proces deploymentu oraz testów. Aktualnie testy odpalane są przy uruchomieniu docker-compose
