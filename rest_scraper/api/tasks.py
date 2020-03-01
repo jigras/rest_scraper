@@ -1,9 +1,8 @@
 from celery.decorators import task
-from api.serv.download_html import download_html,get_text_selectolax,get_list_image
+from api.serv.download_html import download_html, get_text_selectolax, get_list_image
 from api.serv.download_image import serv_download_image
 from api.models import Page
 from django.utils.timezone import now
-
 
 
 @task(name='url_task')
@@ -25,8 +24,11 @@ def download_text_images_task(page_id):
     img_list = get_list_image(html_obj)
     if img_list:
         for image in img_list:
-            download_image_task.delay(image,page_id)
+            download_image_task.delay(image, page_id)
+    page.scraped = True
+    page.save()
+
 
 @task(name='save_img')
 def download_image_task(url, page_id):
-    serv_download_image(url,page_id)
+    serv_download_image(url, page_id)

@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'celery',
     'rest_framework',
+    'django_filters',
     'django_extensions',
     'api',
 
@@ -132,3 +133,4 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'UTC'
 MEDIA_ROOT = '/home/app/web/'
+MEDIA_URL = 'http://127.0.0.1:1337/'

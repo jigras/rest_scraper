@@ -8,7 +8,8 @@ class Page(models.Model):
     url = models.CharField(verbose_name='Url strony', max_length=2048,
                            help_text='Adres url strony z protokołem http/https')
     text = models.TextField(verbose_name='Tekst ze strony', null=True, blank=True)
-    scraped_at = models.DateTimeField(null=True, blank=True)
+    scraped_at = models.DateTimeField(null=True, blank=True,verbose_name='Scrawlowany o')
+    scraped = models.BooleanField(default= False, verbose_name='Gotowy-scrawlowany')
     created_at = models.DateTimeField(default=now)
 
     def __str__(self):
