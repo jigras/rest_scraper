@@ -18,6 +18,7 @@ services:
       - 6379:6379
     volumes:
       - redis:/data
+
   web:
     build: ./rest_scraper
     command: python manage.py runserver 0.0.0.0:8000
@@ -29,6 +30,13 @@ services:
       - ./.env.dev
     depends_on:
       - db
+  test:
+    build: ./rest_scraper
+    command: python manage.py test api.tests
+    volumes:
+      - ./rest_scraper/:/usr/src/app/
+    depends_on:
+      - web
 
   celery:
     build: ./rest_scraper
