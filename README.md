@@ -26,7 +26,7 @@ __/api/v1/page_create/__ - POST aby dodać zadanie
 Request POST
 ```json
 {
-    "url": https://www.dorotasmakuje.com/2016/11/jak-uprazyc-slonecznik/
+    "url": "https://www.dorotasmakuje.com/2016/11/jak-uprazyc-slonecznik/"
 }
 ```
 
