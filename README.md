@@ -110,7 +110,7 @@ Jeżeli strona posiada status scraped = True, mamy możliwość pobrania tekstu 
 ```
 
 
-##Requirements
+## Requirements
 
 
 ```
@@ -143,17 +143,18 @@ Rzeczy do wykonania
 ###Pobieranie treści:
  - Rozbudowa pobierania treści włączając semantyke HTML - np. pobieranie zawartosci samych tagów article
  - Możliwość wykluczania większej ilości tagów html
- 
- 
- ###Pobieranie obrazów:
+  
+###Pobieranie obrazów:
  - Rozbudowa o możliwość wykluczanai bardzo małych obrazów
  - Rozbudowa o możliwość pobierania obrazów z CSS background
  - Weryfikacja contentu zdjęcia
  - Hashowanie contentu zdjęć
  
- ### Testy
+### Testy
  - wykonanie dodatkowych testów widoków
  - wykonanie dodatkowych testów api
  
- ## Co do zmiany
- Do aktualizacji proces deploymentu oraz testów. Aktualnie testy odpalane są przy uruchomieniu docker-compose
+## Co do zmiany
+ Do aktualizacji jest proces deploymentu oraz testów. <br> 
+Aktualnie testy odpalane są przy uruchomieniu docker-compose <br> 
+ Dodanie odzielnych środowisk dla aplikacji
