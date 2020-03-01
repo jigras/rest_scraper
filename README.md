@@ -47,7 +47,7 @@ Response:
     "id": 1
 }
 ```
-### Pobieranie zdjęc dla adresu URL
+### Pobieranie zdjęć dla adresu URL
 __/api/v1/picture_list/?page={page_id}__ - pobranie listy zdjęć dla konkrentej strony.<br>
 Parametr __page_id__ (id adresu url) pobrać można wpisując adres URL w zasobie do sprawdzania statusu zadania ('id')
 
@@ -86,6 +86,22 @@ Response:
     }
 ]
 ```
+
+### Pobieranie tekstu z pobranej strony
+__/api/v1/page_create/{page_id}/__ - pobieranie tekstu na podstawie parametry page_id
+Jeżeli strona posiada status scraped = True, mamy możliwość pobrania tekstu z danej strony 
+```
+{
+    "url": "https://www.dorotasmakuje.com/2016/11/jak-uprazyc-slonecznik/",
+    "scraped": true,
+    "id": 1,
+    "text": "Słonecznik jest znakomitym dodatkiem do surówek, sałatek, zup, makaronów, kasz a nawet deserów 
+    (pyszny z lodami). Prażenie słonecznika znacznie wzmacnia jego smak, dlatego warto poświęcić na to chwilkę zanim 
+    dodamy ziarno do dania. Prażenie słonecznika to bardzo łatwa sprawa, ale trzeba tu pozostać czujnym – słonecznik 
+    łatwo przypalić i wtedy zamiast pysznego orzechowego smaku otrzymamy gorzki.
+}
+```
+
 
 ##Requirements
 
